@@ -271,6 +271,7 @@ menu.add_feature("Real Estate Scam", "toggle", moneyManu.id, function(f)
     while f.on do
 	ezBan()
   system.wait(0)
+  end
 end)
 
 -- le Gun Vans
