@@ -305,6 +305,21 @@ menu.add_feature("Real Estate Scam", "toggle", moneyManu.id, function(f)
     end
 end)
 
+menu.add_feature("Free Supplies", "toggle", drugManu.id, function(f)
+  while f.on do
+    script.set_global_i(262145 + 21869, 0)
+  system.wait(0)
+  end
+end)
+
+local ValueFeat = menu.add_feature("tax fraud (drug value)", "value_i", drugManu.id, function(f)
+    script.set_global_i(262145 + 17425, f.value * 1485) 
+end)
+ValueFeat.min = 0
+ValueFeat.max = 2000
+ValueFeat.mod = 100
+ValueFeat.value = 0
+
 -- le Gun Vans
 menu.add_feature("Bring Gun Van To Me", "action", gunManu.id, function()
     local pos = player.get_player_coords(player.player_id())
